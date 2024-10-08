@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.pig4cloud.plugin.constants;
+package com.alibaba.nacos.plugin.datasource.constants;
 
 /**
  * The data source name.

@@ -9,12 +9,11 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.pig4cloud.plugin</groupId>
-    <artifactId>nacos-datasource-plugin-kingbase</artifactId>
-    <version>0.0.5.PG</version>
-    <name>nacos-datasource-plugin-kingbase</name>
-    <description>nacos 人大金仓存储支持插件</description>
-    <url>https://pig4cloud.com</url>
+    <groupId>com.alibaba.nacos.plugin</groupId>
+    <artifactId>nacos-datasource-plugin-kingbase8</artifactId>
+    <version>0.0.1</version>
+    <name>nacos-datasource-plugin-kingbase8</name>
+    <description>nacos 人大金仓存储(kingbase8)支持插件</description>
 
     <licenses>
         <license>
@@ -32,16 +31,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <git.commit.plugin>2.2.5</git.commit.plugin>
         <commons-compress>1.21</commons-compress>
-
     </properties>
-
-    <developers>
-        <developer>
-            <name>lengleng</name>
-            <email>wangiegie@gmail.com</email>
-        </developer>
-    </developers>
-
     <scm>
         <tag>master</tag>
         <connection>https://gitee.wang/lengleng/pig</connection>
@@ -50,7 +40,6 @@
     </scm>
 
     <dependencies>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -66,25 +55,31 @@
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-datasource-plugin</artifactId>
             <version>${nacos.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-common</artifactId>
             <version>${nacos.version}</version>
+            <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
 
+        <dependency>
+            <groupId>kingbase8</groupId>
+            <artifactId>kingbase8-driver</artifactId>
+            <version>9.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!--代码格式插件，默认使用spring 规则-->
             <plugin>
                 <groupId>io.spring.javaformat</groupId>
                 <artifactId>spring-javaformat-maven-plugin</artifactId>
                 <version>${spring.checkstyle.plugin}</version>
             </plugin>
-            <!--代码编译指定版本插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -96,8 +91,6 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
-
 </project>
