@@ -2,7 +2,6 @@ package com.pig4cloud.plugin.impl.kingbase;
 
 import com.alibaba.nacos.common.utils.StringUtils;
 import com.alibaba.nacos.plugin.datasource.constants.FieldConstant;
-import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigTagsRelationMapper;
 import com.alibaba.nacos.plugin.datasource.model.MapperContext;
 import com.alibaba.nacos.plugin.datasource.model.MapperResult;
@@ -10,7 +9,6 @@ import com.pig4cloud.plugin.constants.DataSourceConstant;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class ConfigTagsRelationMapperByKingbase extends KingbaseAbstractMapper implements ConfigTagsRelationMapper {
 
