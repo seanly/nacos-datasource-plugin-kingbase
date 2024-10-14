@@ -1,3 +1,4 @@
+ARG VERSION=2.4.1-2
 FROM docker.opsbox.dev/seanly/toolset:openjdk-8u372-b07-2 AS build
 
 WORKDIR /code/kingbase8
@@ -12,14 +13,13 @@ cp -r /maven-wrapper/.mvn ./
     -Dpackaging=jar
 
 ./mvnw -B -e -U -DskipTests clean install
+cp -r target/*.jar libs/
 EOF
 
-FROM docker.opsbox.dev/seanly/appset:nacos-2.4.1-1
+FROM docker.opsbox.dev/seanly/appset:nacos-${VERSION}
 
 LABEL maintainer="seanly <seanly@opsbox.dev>"
 COPY --from=build /code/kingbase8/libs/ /home/nacos/plugins/
-COPY --from=build /code/kingbase8/target/*.jar /home/nacos/plugins/
-COPY ./package/bake/rootfs ./
 
 EXPOSE 8848
 
